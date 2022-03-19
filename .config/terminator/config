@@ -16,14 +16,16 @@
 [profiles]
   [[default]]
     icon_bell = False
-    background_color = "#2E3440"
+    background_color = "#1E1E28"
+    background_darkness = 0.7
+    background_type = transparent
     cursor_shape = ibeam
-    cursor_color = "#D8DEE9"
+    cursor_color = "#b1e3ad"
     font = Iosevka 11
-    foreground_color = "#D8DEE9"
+    foreground_color = "#dadae8"
     show_titlebar = False
     scrollbar_position = hidden
-    palette = "#3B4252:#BF616A:#A3BE8C:#EBCB8B:#81A1C1:#B48EAD:#88C0D0:#E5E9F0:#4C566A:#BF616A:#A3BE8C:#EBCB8B:#81A1C1:#B48EAD:#8FBCBB:#ECEFF4"
+    palette = "#6e6c7e:#e38c8f:#b1e3ad:#ebddaa:#a4b9ef:#c6aae8:#e5b4e2:#dadae8:#6e6c7e:#e38c8f:#b1e3ad:#ebddaa:#a4b9ef:#c6aae8:#e5b4e2:#dadae8"
     use_system_font = False
 [layouts]
   [[default]]
