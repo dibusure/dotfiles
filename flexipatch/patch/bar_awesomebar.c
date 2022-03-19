@@ -33,7 +33,7 @@ draw_awesomebar(Bar *bar, BarArg *a)
 				scm = SchemeTitleNorm;
 
 			tpad = lrpad / 2;
-			ipad = c->icon ? c->icon->width + ICONSPACING : 0;
+			ipad = c->icon ? c->icw + ICONSPACING : 0;
 
 			tx = x;
 			tw = tabw;
@@ -49,7 +49,7 @@ draw_awesomebar(Bar *bar, BarArg *a)
 			tw -= lrpad;
 
 			if (ipad) {
-				drw_img(drw, tx, a->y + (a->h - c->icon->height) / 2, c->icon, tmpicon);
+				drw_pic(drw, tx, a->y + (a->h - c->ich) / 2, c->icw, c->ich, c->icon);
 				tx += ipad;
 				tw -= ipad;
 			}

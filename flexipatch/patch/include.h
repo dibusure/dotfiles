@@ -2,8 +2,11 @@
 #include "bar_indicators.h"
 #include "bar_tagicons.h"
 
+#include "bar_alpha.h"
 #include "bar_ewmhtags.h"
+#include "combo.h"
 #include "bar_ltsymbol.h"
+#include "bar_powerline_status.h"
 #include "bar_status.h"
 #include "bar_statusbutton.h"
 #include "bar_statuscolors.h"
@@ -19,7 +22,6 @@
 #include "pertag.h"
 #include "placemouse.h"
 #include "push.h"
-#include "scratchpad_alt_1.h"
 #include "tagswapmon.h"
 #include "vanitygaps.h"
 /* Layouts */

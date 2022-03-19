@@ -21,14 +21,18 @@ typedef struct {
 	Display *dpy;
 	int screen;
 	Window root;
+	Visual *visual;
+	unsigned int depth;
+	Colormap cmap;
 	Drawable drawable;
+	Picture picture;
 	GC gc;
 	Clr *scheme;
 	Fnt *fonts;
 } Drw;
 
 /* Drawable abstraction */
-Drw *drw_create(Display *dpy, int screen, Window win, unsigned int w, unsigned int h);
+Drw *drw_create(Display *dpy, int screen, Window win, unsigned int w, unsigned int h, Visual *visual, unsigned int depth, Colormap cmap);
 void drw_resize(Drw *drw, unsigned int w, unsigned int h);
 void drw_free(Drw *drw);
 
@@ -43,10 +47,12 @@ void drw_clr_create(
 	Drw *drw,
 	Clr *dest,
 	const char *clrname
+	, unsigned int alpha
 );
 Clr *drw_scm_create(
 	Drw *drw,
 	char *clrnames[],
+	const unsigned int alphas[],
 	size_t clrcount
 );
 
@@ -57,10 +63,12 @@ void drw_cur_free(Drw *drw, Cur *cursor);
 /* Drawing context manipulation */
 void drw_setfontset(Drw *drw, Fnt *set);
 void drw_setscheme(Drw *drw, Clr *scm);
+void drw_settrans(Drw *drw, Clr *psc, Clr *nsc);
 
 /* Drawing functions */
 void drw_rect(Drw *drw, int x, int y, unsigned int w, unsigned int h, int filled, int invert);
 int drw_text(Drw *drw, int x, int y, unsigned int w, unsigned int h, unsigned int lpad, const char *text, int invert, Bool markup);
+void drw_arrow(Drw *drw, int x, int y, unsigned int w, unsigned int h, int direction, int slash);
 
 /* Map functions */
 void drw_map(Drw *drw, Window win, int x, int y, unsigned int w, unsigned int h);

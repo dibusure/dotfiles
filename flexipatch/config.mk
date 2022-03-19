@@ -28,8 +28,8 @@ FREETYPEINC = /usr/include/freetype2
 # OpenBSD - Uncomment this for the swallow patch / SWALLOW_PATCH
 #KVMLIB = -lkvm
 
-# Uncomment this for the alpha patch / BAR_ALPHA_PATCH
-#XRENDER = -lXrender
+# Uncomment this for the alpha patch and the winicon patch (BAR_ALPHA_PATCH, BAR_WINICON_PATCH)
+XRENDER = -lXrender
 
 # Uncomment this for the mdpcontrol patch / MDPCONTROL_PATCH
 #MPDCLIENT = -lmpdclient

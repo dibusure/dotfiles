@@ -1,0 +1,3 @@
+#!/bin/bash
+TEMP=$(sensors | grep temp1 | awk 'NR==1{gsub("+", " "); gsub("\\..", " "); print $2}')
+echo "$TEMP°"
