@@ -1,5 +1,5 @@
-# [DWM] Nord rice
-25.02.2022
+# [DWM] Catppuccin rice
+20.03.2022
 
 # Screenshots
-![dwm classic](https://i.yapx.ru/Q42Gg.png)
+![dwm classic](https://i.yapx.ru/ROiXq.png)
