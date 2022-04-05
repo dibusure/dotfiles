@@ -1,5 +1,5 @@
-# [DWM] Catppuccin rice
-20.03.2022
+# [sway wm] simple dark rice
+05/04/2022
 
 # Screenshots
-![dwm classic](https://i.yapx.ru/ROiXq.png)
+![sway](https://i.yapx.ru/RgXnB.png)

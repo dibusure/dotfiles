@@ -1,0 +1,55 @@
+#сортировка уведомлений
+sort=-time
+
+#слой на котором будет запущенно уведомление
+layer=overlay
+
+#цвет фона
+background-color=#2f343f
+
+#ширина уведомления
+width=300
+
+#высота уведомления
+height=110
+
+#размер рамки
+border-size=0
+
+#цвет рамки
+border-color=#88c0d0
+
+#радиус скругления
+border-radius=15
+
+#отображение иконок, есле 0 то выключенно
+icons=1
+
+#максимальный размер иконки
+max-icon-size=32
+
+#время отображения уведомления в милисекундах
+default-timeout=6000
+
+#яхз что такое
+ignore-timeout=1
+
+#настройка шрифта
+font=ubuntu mono 10
+
+
+#цвет рамки для уведомлений разной степени важности:
+
+[urgency=low]
+border-color=#2f343f
+
+[urgency=normal]
+border-color=#2f343f
+
+[urgency=high]
+border-color=#2f343f
+default-timeout=0
+
+[category=mpd]
+default-timeout=2000
+group-by=category
