@@ -1,0 +1,216 @@
+# mod is 'Windows' key
+set $mod Mod4
+set $LOC ~/.local/bin/
+
+set $left h
+set $down j
+set $up k
+set $right l
+
+#Toggle touchpad
+#bindsym --to-code $mod+y input 1267:91:Elan_Touchpad events disabled
+#bindsym --to-code $mod+Shift+y input 1267:91:Elan_Touchpad events enabled
+
+#Notifications dismiss
+bindsym --to-code $mod+Shift+n exec $LOC/dismiss_n_a
+bindsym --to-code $mod+n exec $LOC/dismiss_n
+
+#Browser
+bindsym --to-code $mod+z exec firefox
+
+#YouTube
+bindsym --to-code $mod+p exec $LOC/play_vid
+bindsym --to-code $mod+Shift+p exec $LOC/download_vid
+bindsym --to-code $mod+Ctrl+p exec $LOC/download_music
+
+#Choose color on the screen and copy HEX to clipboard
+bindsym --to-code $mod+g exec $LOC/choose_color
+
+#Open clipboard manager
+bindsym --to-code $mod+c exec $LOC/clipboard-item-pick-launcher
+
+#Remove one item from history
+bindsym --to-code $mod+Ctrl+c exec $LOC/clipboard-item-clear-launcher
+
+#Clear clipboard history
+bindsym --to-code $mod+Shift+c exec "clipman clear --all"
+
+#App launcher
+bindsym --to-code $mod+s exec $LOC/sway-launcher
+
+# Lock
+bindsym --to-code $mod+Ctrl+l exec $LOC/lock_off
+
+# Start a terminal
+bindsym --to-code $mod+t exec footclient
+bindsym --to-code $mod+Shift+t exec "footclient -a floationg-foot"
+
+# Close focused window
+bindsym --to-code $mod+q kill
+
+# Drag floating windows by holding down $mod and left mouse button.
+# Resize them with right mouse button + $mod.
+# Despite the name, also works for non-floating windows.
+# Change normal to inverse to use left mouse button for resizing and right
+# mouse button for dragging.
+floating_modifier $mod normal
+
+# Reload the configuration file
+bindsym --to-code $mod+Shift+e reload
+
+# Exit
+bindsym --to-code $mod+e exec "wlogout -b 2"
+
+bindsym --to-code $mod+y sticky toggle
+
+# Moving around:
+#
+# Move your focus around (Win+arrow keys)
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+bindsym $mod+$left focus left
+bindsym $mod+$down focus down
+bindsym $mod+$up focus up
+bindsym $mod+$right focus right
+
+
+# Move the focused window with the same, but add Shift
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+bindsym $mod+Shift+$left move left
+bindsym $mod+Shift+$down move down
+bindsym $mod+Shift+$up move up
+bindsym $mod+Shift+$right move right
+#
+#
+# Workspaces:
+#
+# Switch to workspace
+bindsym $mod+1 workspace number 1
+bindsym $mod+2 workspace number 2
+bindsym $mod+3 workspace number 3
+bindsym $mod+4 workspace number 4
+bindsym $mod+5 workspace number 5
+bindsym $mod+6 workspace number 6
+bindsym $mod+7 workspace number 7
+bindsym $mod+8 workspace number 8
+bindsym $mod+9 workspace number 9
+bindsym $mod+0 workspace number 10
+
+# Move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace number 1
+bindsym $mod+Shift+2 move container to workspace number 2
+bindsym $mod+Shift+3 move container to workspace number 3
+bindsym $mod+Shift+4 move container to workspace number 4
+bindsym $mod+Shift+5 move container to workspace number 5
+bindsym $mod+Shift+6 move container to workspace number 6
+bindsym $mod+Shift+7 move container to workspace number 7
+bindsym $mod+Shift+8 move container to workspace number 8
+bindsym $mod+Shift+9 move container to workspace number 9
+bindsym $mod+Shift+0 move container to workspace number 10
+# Note: workspaces can have any name you want, not just numbers.
+    # We just use 1-10 as the default.
+
+    
+#Screenshots
+#Full screen to file
+bindsym $mod+Print exec $LOC/screenshot_full_file
+#Full screen to clipboard
+bindsym Print exec $LOC/screenshot_full_clipboard
+#Select region and write to file
+bindsym $mod+Print+Shift exec $LOC/screenshot_part_file
+#Select region and copy to clipboard
+bindsym Print+Shift exec $LOC/screenshot_part_clipboard
+#Select window and write to file
+bindsym $mod+Print+Control exec $LOC/screenshot_window_file
+#Select window andwindow and copy to clipboard
+bindsym Print+Control exec $LOC/screenshot_window_clipboard
+
+# Layout stuff:
+#
+# You can "split" the current object of your focus with
+# $mod+b or $mod+v, for horizontal and vertical splits
+# respectively.
+#bindsym --to-code $mod+b splith
+#bindsym --to-code $mod+v splitv
+
+# Make the current focus fullscreen
+bindsym --to-code $mod+f fullscreen
+
+  
+# Toggle the current focus between tiling and floating mode
+bindsym $mod+Shift+space floating toggle
+
+# Swap focus between the tiling area and the floating area
+bindsym $mod+space focus mode_toggle
+
+# Scratchpad:
+# Sway has a "scratchpad", which is a bag of holding for windows.
+# You can send windows there and get them back later.
+
+# Move the currently focused window to the scratchpad
+bindsym --to-code $mod+Shift+x move scratchpad
+
+# Show the next scratchpad window or hide the focused scratchpad window.
+# If there are multiple scratchpad windows, this command cycles through them.
+bindsym --to-code $mod+x scratchpad show
+
+# Resizing containers:
+bindsym --to-code $mod+r mode "resize"
+mode "resize" {
+bindsym Left resize shrink width 10px
+bindsym Down resize grow height 10px
+bindsym Up resize shrink height 10px
+bindsym Right resize grow width 10px
+
+bindsym $left resize shrink width 10px
+bindsym $down resize grow height 10px
+bindsym $up resize shrink height 10px
+bindsym $right resize grow width 10px
+
+
+# Return to default mode
+bindsym Return mode "default"
+bindsym Escape mode "default"
+}
+
+
+#Volume control
+bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
+bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
+bindsym XF86AudioRaiseVolume+Shift exec pactl set-sink-volume @DEFAULT_SINK@ +1%
+bindsym XF86AudioLowerVolume+Shift exec pactl set-sink-volume @DEFAULT_SINK@ -1%
+bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
+bindsym XF86AudioMicMute exec pactl set-source-mute @DEFAULT_SOURCE@ toggle
+
+#Alternative volume control
+bindsym Ctrl+F3 exec pactl set-sink-volume @DEFAULT_SINK@ +5%
+bindsym Ctrl+F2 exec pactl set-sink-volume @DEFAULT_SINK@ -5%
+bindsym Ctrl+Shift+F3 exec pactl set-sink-volume @DEFAULT_SINK@ +1%
+bindsym Ctrl+Shift+F2 exec pactl set-sink-volume @DEFAULT_SINK@ -1%
+bindsym Ctrl+F1 exec pactl set-sink-mute @DEFAULT_SINK@ toggle
+bindsym Ctrl+F4 exec pactl set-source-mute @DEFAULT_SOURCE@ toggle
+
+#Brightness
+bindsym Ctrl+F9 exec ddcutil setvcp 10 - 20
+bindsym Ctrl+Shift+F9 exec ddcutil setvcp 10 - 5
+bindsym Ctrl+F10 exec ddcutil setvcp 10 + 20
+bindsym Ctrl+Shift+F10 exec ddcutil setvcp 10 + 5
+
+#Brightness laptop control
+bindsym Ctrl+F11 exec brightnessctl s 5%-
+bindsym Ctrl+F12 exec brightnessctl s 5%+
+bindsym Ctrl+F11+Shift exec brightnessctl s 1%-
+bindsym Ctrl+F12+Shift exec brightnessctl s 1%+
+
+#Media keys
+bindsym Ctrl+F6 exec playerctl play-pause --ignore-player=JBL_TUNE205BT
+bindsym Ctrl+F7 exec playerctl next --ignore-player=JBL_TUNE205BT
+bindsym Ctrl+F5 exec playerctl previous --ignore-player=JBL_TUNE205BT
+bindsym Ctrl+F8 exec playerctl stop --ignore-player=JBL_TUNE205BT
